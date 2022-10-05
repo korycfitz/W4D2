@@ -3,8 +3,12 @@ require_relative "piece.rb"
 class Board ## will need board with instances of Piece in location where each piece is
 
     def initialize
-        @grid = Array.new(8) { Board.new(8) }
+        @rows = 
+        @null_pieces = NullPiece
     end
+
+
+
 
     def populate #populates the board with the pieces
         start_pawns = [[1,0], [1,1], [1,2], [1,3], [1,4], [1,5], [1,6], [1,7], [6,0], [6,1], [6,2], [6,3], [6,4], [6,5], [6,6], [6,7]]

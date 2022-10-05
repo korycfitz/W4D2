@@ -38,10 +38,10 @@ require_relative "Employee.rb"
 # end
 
 
-class Manager
+class Manager < Employee
     attr_reader :managers_employees
-    def initialize(name, title, salary, boss)
-        super(name, title, salary, boss)
+    def initialize(name, salary, title, boss)
+        super(name, salary, title, boss)
         @managers_employees = []
     end
 
@@ -73,10 +73,6 @@ darren = Manager.new("Darren", 78000, "TA_Manager", ned)
 david = Employee.new("David", 10000, "TA", darren)
 shawna = Employee.new("Shawna", 12000, "TA", darren) 
 
-ned.assign_employee(darren)
-darren.assign_employee(david)
-darren.assign_employee(shawna)
-
 p ned.bonus(5) # => 500_000
-p darren.find_bonus(4) # => 88_000
+p darren.bonus(4) # => 88_000
 p david.bonus(3) # => 30_000
